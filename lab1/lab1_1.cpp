@@ -29,6 +29,13 @@ void swapElements(int (&arr)[10], int i, int j) {
     arr[j] = temp;
 }
 
+// Умножаем каждый элемент массива на 2
+void multiplyByTwo(int (&arr)[10]) {
+    for (int& x : arr) {
+        x *= 2;
+    }
+}
+
 int main() {
     setlocale(LC_ALL, ".UTF-8");
     srand(time(nullptr));
@@ -41,6 +48,10 @@ int main() {
 
     swapElements(arr, 2, 7);
     cout << "После обмена: ";
+    printArray(arr);
+
+    multiplyByTwo(arr);
+    cout << "После умножения на 2: ";
     printArray(arr);
 
     return 0;

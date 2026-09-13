@@ -18,6 +18,17 @@ void printArray(const int(&arr)[10]) {
     cout << endl;
 }
 
+// Меняем местами два элемента массива по индексам
+void swapElements(int (&arr)[10], int i, int j) {
+    if (i < 0 || i >= 10 || j < 0 || j >= 10) {
+        cerr << "Ошибка. Индекс вне диапазона [0, 9]" << endl;
+        return;
+    }
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
 int main() {
     setlocale(LC_ALL, ".UTF-8");
     srand(time(nullptr));
@@ -26,6 +37,10 @@ int main() {
     
     fillArray(arr);
     cout << "Исходный массив: ";
+    printArray(arr);
+
+    swapElements(arr, 2, 7);
+    cout << "После обмена: ";
     printArray(arr);
 
     return 0;

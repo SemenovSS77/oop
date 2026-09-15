@@ -30,6 +30,17 @@ int main() {
 
     SafeArray myArr = createArray(5);
 
+    // Запись слева от знака равенства
+    getElement(myArr, 2) = 999;
+    getElement(myArr, 4) = 42;
+
+    cout << "myArr.data[2] = " << myArr.data[2] << endl;
+    cout << "myArr.data[4] = " << myArr.data[4] << endl;
+
+    // Проверка выхода за границы
+    getElement(myArr, 10) = 777;
+    cout << "myArr.data[2] = " << myArr.data[2] << " (не изменилось)" << endl;
+
     delete[] myArr.data;
     myArr.data = nullptr;
 

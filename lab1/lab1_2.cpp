@@ -1,8 +1,32 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+void process(int*& arr, int size) {
+    
+    // Находим первый отрицательный элемент
+    int negIndex = -1;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] < 0) {
+            negIndex = i;
+            break;
+        }
+    }
+
+    // Если нашли, то создаем новый массив до отрицательного
+    if (negIndex != -1) {
+        int newSize = negIndex;
+        int* newArr = new int[newSize]{};
+
+        for (int i = 0; i < newSize; i++) {
+            newArr[i] = arr[i];
+        }
+
+        delete[] arr;
+        arr = newArr;
+    }
+}
+
+int main() {
     setlocale(LC_ALL, ".UTF-8");
 
     int N{};
@@ -16,6 +40,8 @@ int main()
     for (int i = 0; i < N; i++) {
         cin >> arr[i];
     }
+
+    process(arr, N);
 
     // Освобождаем память
     delete[] arr;

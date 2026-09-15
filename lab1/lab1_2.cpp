@@ -41,7 +41,23 @@ int main() {
         cin >> arr[i];
     }
 
+    int originalN = N;
+
     process(arr, N);
+
+    int actualSize = originalN;
+    for (int i = 0; i < originalN; i++) {
+        if (arr[i] < 0) {
+            actualSize = i;
+            break;
+        }
+    }
+
+    cout << "Результат: ";
+    for (int i = 0; i < actualSize; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
     // Освобождаем память
     delete[] arr;

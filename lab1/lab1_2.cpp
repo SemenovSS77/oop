@@ -63,5 +63,13 @@ int main() {
     delete[] arr;
     arr = nullptr;
 
+    // Безопасная проверка nullptr
+    if (arr != nullptr) {
+        cout << "Значение по указателю: " << *arr << endl;
+    }
+    else {
+        cout << "Указатель равен nullptr, безопасно" << endl;
+    }
+
     return 0;
 }

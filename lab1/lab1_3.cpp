@@ -25,6 +25,14 @@ int& getElement(SafeArray& arr, int index) {
     return arr.data[index];
 }
 
+void printSafe(const SafeArray& arr) {
+    cout << "SafeArray[" << arr.size << "]: ";
+    for (int i = 0; i < arr.size; i++) {
+        cout << arr.data[i] << " ";
+    }
+    cout << endl;
+}
+
 int main() {
     setlocale(LC_ALL, ".UTF-8");
 
@@ -34,12 +42,11 @@ int main() {
     getElement(myArr, 2) = 999;
     getElement(myArr, 4) = 42;
 
-    cout << "myArr.data[2] = " << myArr.data[2] << endl;
-    cout << "myArr.data[4] = " << myArr.data[4] << endl;
+    printSafe(myArr);
 
     // Проверка выхода за границы
     getElement(myArr, 10) = 777;
-    cout << "myArr.data[2] = " << myArr.data[2] << " (не изменилось)" << endl;
+    printSafe(myArr);
 
     delete[] myArr.data;
     myArr.data = nullptr;

@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Выделяет память под двумерный массив (матрицу), заполненный нулями
+ * @param rows Количество строк
+ * @param cols Количество столбцов
+ * @return Указатель на массив указателей (int**)
+ * @warning Освобождать через freeMatrix()
+ */
 int** allocateMatrix(int rows, int cols) {
     int** matrix = new int*[rows]{};
     for (int i = 0; i < rows; i++) {
@@ -9,6 +16,12 @@ int** allocateMatrix(int rows, int cols) {
     return matrix;
 }
 
+/**
+ * @brief Заполняет матрицу с клавиатуры
+ * @param matrix Указатель на матрицу
+ * @param rows Количество строк
+ * @param cols Количество столбцов
+ */
 void fillMatrix(int** matrix, int rows, int cols) {
     cout << "Введите " << rows * cols << " элементов матрицы (" << rows << "x" << cols << "):\n";
     for (int i = 0; i < rows; ++i) {
@@ -19,6 +32,14 @@ void fillMatrix(int** matrix, int rows, int cols) {
     }
 }
 
+/**
+ * @brief Красиво выводит матрицу на экран
+ * @param matrix Указатель на матрицу
+ * @param rows Количество строк
+ * @param cols Количество столбцов
+ * @param showBorders Рисовать ли рамку из '*' (по умолчанию true)
+ * @param title Заголовок над матрицей (по умолчанию "Matrix")
+ */
 void printMatrix(int** matrix, int rows, int cols, bool showBorders = true, string title = "Matrix") {
     cout << "\n ||| " << title << " |||\n";
 
@@ -53,6 +74,12 @@ void printMatrix(int** matrix, int rows, int cols, bool showBorders = true, stri
     cout << endl;
 }
 
+/**
+ * @brief Освобождает память, занятую матрицей
+ * @param matrix Указатель на матрицу
+ * @param rows Количество строк
+ * @note Сначала удаляются вложенные массивы, затем массив указателей
+ */
 void freeMatrix(int** matrix, int rows) {
     if (matrix == nullptr) {
         return;
@@ -64,6 +91,10 @@ void freeMatrix(int** matrix, int rows) {
     delete[] matrix;
 }
 
+/**
+ * @brief Точка входа
+ * @return 0 при успешном завершении
+ */
 int main() {
     setlocale(LC_ALL, ".UTF-8");
 

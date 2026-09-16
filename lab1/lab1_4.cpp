@@ -55,5 +55,17 @@ void printMatrix(int** matrix, int rows, int cols, bool showBorders = true, stri
 
 int main() {
     setlocale(LC_ALL, ".UTF-8");
+
+    int rows = 3, cols = 4;
+    int** myMatrix = allocateMatrix(rows, cols);
+    
+    fillMatrix(myMatrix, rows, cols);
+
+    printMatrix(myMatrix, rows, cols);
+
+    printMatrix(myMatrix, rows, cols, true, "Моя матрица");
+
+    printMatrix(myMatrix, rows, cols, false, "Без рамки");
+
     return 0;
 }

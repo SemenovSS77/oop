@@ -1,11 +1,20 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @struct SafeArray
+ * @brief Безопасный массив с контролем границ
+ */
 struct SafeArray {
-    int* data;
-    int size;
+    int* data;      ///< Указатель на данные
+    int size;       ///< Количество элементов
 };
 
+/**
+ * @brief Создаёт массив заданного размера, заполненный нулями
+ * @param size Размер массива
+ * @return Структура SafeArray
+ */
 SafeArray createArray(int size) {
     SafeArray arr;
     arr.size = size;
@@ -13,18 +22,27 @@ SafeArray createArray(int size) {
     return arr;
 }
 
+/**
+ * @brief Возвращает ссылку на элемент по индексу
+ * @param arr Ссылка на SafeArray
+ * @param index Индекс элемента
+ * @return Ссылка на элемент; при выходе за границы  ссылка на заглушку
+ * @note Позволяет писать: getElement(arr, 2) = 999;
+ */
 int& getElement(SafeArray& arr, int index) {
-    // 3.1 Проверяеем границы
     if (index < 0 || index >= arr.size) {
         cout << "Ошибка. Индекс " << index << " вне диапозона [0, " << arr.size - 1 << "]" << endl;
 
         static int dummy = 0;
         return dummy;
     }
-    // 3.2 Корректный индекс
     return arr.data[index];
 }
 
+/**
+ * @brief Выводит массив на экран
+ * @param arr Константная ссылка на SafeArray
+ */
 void printSafe(const SafeArray& arr) {
     cout << "SafeArray[" << arr.size << "]: ";
     for (int i = 0; i < arr.size; i++) {
@@ -33,6 +51,13 @@ void printSafe(const SafeArray& arr) {
     cout << endl;
 }
 
+/**
+ * @brief Изменяет размер массива
+ * @param arr Ссылка на SafeArray
+ * @param M Новый размер
+ * @note При уменьшении удалённые элементы выводятся на экран,
+ *       при увеличении новые заполняются нулями
+ */
 void reSizeArray(SafeArray& arr, int M) {
     int N = arr.size;
 
@@ -43,14 +68,12 @@ void reSizeArray(SafeArray& arr, int M) {
     int* newData = new int[M]{};
 
     if (M < N) {
-        // 6.1 При уменьшении массива выводим удаленные элементы
         cout << "Удалены элементы: ";
         for (int i = M; i < N; i++) {
             cout << arr.data[i] << " ";
         }
         cout << endl;
 
-        // Копируем только первые M
         for (int i = 0; i < M; i++) {
             newData[i] = arr.data[i];
         }
@@ -67,6 +90,10 @@ void reSizeArray(SafeArray& arr, int M) {
     arr.size = M;
 }
 
+/**
+ * @brief Точка входа
+ * @return 0 при успешном завершении
+ */
 int main() {
     setlocale(LC_ALL, ".UTF-8");
 

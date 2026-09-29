@@ -34,6 +34,9 @@ public:
 
     // Параметризованный конструктор. Имеет список инициализации, а также гостя (т.е. занятый номер)
     HotelRoom(int number, RoomCategory category, double pricePernight, const std::string& guestName);
+
+    // Деструктор
+    ~HotelRoom();
 };
 
 #endif

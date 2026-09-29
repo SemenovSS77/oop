@@ -50,3 +50,9 @@ HotelRoom::HotelRoom(int number, RoomCategory caterogy, double pricePerNight, co
     if (this->isOccupied) cout << " - заселен: " << this->guestName;
     cout << endl;
 }
+
+// Деструктор
+HotelRoom::~HotelRoom() {
+    objectCount--;
+    cout << "[HotelRoom] Уничтожен номер №" << number << " (осталось объектов: " << objectCount << ")" << endl;
+}

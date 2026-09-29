@@ -3,6 +3,7 @@
 
 #include <string>
 
+// Категория номера. Пользовательский тип.
 enum class RoomCategory {
     Economy,
     Standard,
@@ -12,21 +13,26 @@ enum class RoomCategory {
 
 class HotelRoom {
 private:
-    int number;
-    RoomCategory category;
-    double pricePerNight;
-    bool isOccupied;
-    std::string guestName;
+    int number; // номер комнаты
+    RoomCategory category; // категория
+    double pricePerNight; // цена за сутки
+    bool isOccupied; // занят ли номер
+    std::string guestName; // имя гостя
 
+    // Статический обработчик существующих объектов
     static int objectCount;
 
+    // Вспомогательный метод проверки инвариантов
     bool isStateValid() const;
 
 public:
+    // Конструктор по умолчанию. Корректное начальное состояние
     HotelRoom();
 
+    // Параметризованный конструктор. Имеет список инициализации
     HotelRoom(int number, RoomCategory category, double pricePerNight);
-    
+
+    // Параметризованный конструктор. Имеет список инициализации, а также гостя (т.е. занятый номер)
     HotelRoom(int number, RoomCategory category, double pricePernight, const std::string& guestName);
 };
 

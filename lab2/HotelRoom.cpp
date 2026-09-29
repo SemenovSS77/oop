@@ -74,3 +74,49 @@ string HotelRoom::categoryToString(RoomCategory cat) {
     }
     return "Неизвестно";
 }
+
+// Методы изменения
+bool HotelRoom::checkIn(const string& name) {
+    if (name.empty()) {
+        cerr << "Ошибка. Имя постояльца не может быть пустым" << endl;
+        return false;
+    }
+    if (isOccupied) {
+        cerr << "Ошибка. Номер №" << number << " уже занят" << endl;
+        return false;
+    }
+
+    isOccupied = true;
+    guestName = name;
+    cout << "Номер №" << number << " заселен: " << guestName << endl;
+    return true;
+}
+
+bool HotelRoom::checkOut() {
+    if (!isOccupied) {
+        cerr << "Ошибка. Номер №" << number << " итак свободен" << endl;
+        return false;
+    }
+
+    cout << "Номер №" << number << " выселен (был: " << guestName << ")" << endl;
+    isOccupied = false;
+    guestName = "";
+    return true;
+}
+
+bool HotelRoom::changePrice(double newPrice) {
+    if (newPrice < 0) {
+        cerr << "Ошибка. Цена не может быть отрицательной" << endl;
+        return false;
+    }
+
+    pricePerNight = newPrice;
+    cout << "Номер №" << number << ": новая цена = " << pricePerNight << endl;
+    return true;
+}
+
+bool HotelRoom::changeCategory(RoomCategory newCategory) {
+    category = newCategory;
+    cout << "Номер №" << number << ": новая категория = " << categoryToString(category) << endl;
+    return true;
+}

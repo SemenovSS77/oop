@@ -50,6 +50,12 @@ public:
 
     // Преобразование категории в строку (вспомогательное)
     static std::string categoryToString(RoomCategory cat);
+
+    // Методы изменения
+    bool checkIn(const std::string& name); // заселить
+    bool checkOut(); // выселить
+    bool changePrice(double newPrice); // изменить цену
+    bool changeCategory(RoomCategory newCategory); // изменить категорию
 };
 
 #endif

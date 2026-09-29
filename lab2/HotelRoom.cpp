@@ -120,3 +120,22 @@ bool HotelRoom::changeCategory(RoomCategory newCategory) {
     cout << "Номер №" << number << ": новая категория = " << categoryToString(category) << endl;
     return true;
 }
+
+// Вспомогательные методы
+bool HotelRoom::isStateValid() const {
+    if (number <= 0) return false;
+    if (pricePerNight < 0) return false;
+    if (isOccupied && guestName.empty()) return false;
+    if (!isOccupied && !guestName.empty()) return false;
+
+    return true;
+}
+
+void HotelRoom::print() const {
+    cout << "--- Номер №" << number << " ---" << endl;
+    cout << "\t Категория: " << categoryToString(category) << endl;
+    cout << "\t Цена за сутки: " << pricePerNight << endl;
+    cout << "\t Занят: " << (isOccupied ? "да" : "нет") << endl;
+    if (isOccupied) cout << "\t Гость: " << guestName << endl;
+    cout << "\t Состояние: " << (isStateValid() ? "корректно" : "некорректно") << endl;
+}

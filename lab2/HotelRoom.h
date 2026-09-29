@@ -56,6 +56,9 @@ public:
     bool checkOut(); // выселить
     bool changePrice(double newPrice); // изменить цену
     bool changeCategory(RoomCategory newCategory); // изменить категорию
+
+    //
+    void print() const;
 };
 
 #endif

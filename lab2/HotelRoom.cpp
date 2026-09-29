@@ -132,10 +132,10 @@ bool HotelRoom::isStateValid() const {
 }
 
 void HotelRoom::print() const {
-    cout << "--- Номер №" << number << " ---" << endl;
-    cout << "\t Категория: " << categoryToString(category) << endl;
-    cout << "\t Цена за сутки: " << pricePerNight << endl;
-    cout << "\t Занят: " << (isOccupied ? "да" : "нет") << endl;
-    if (isOccupied) cout << "\t Гость: " << guestName << endl;
-    cout << "\t Состояние: " << (isStateValid() ? "корректно" : "некорректно") << endl;
+    cout << "----- Номер №" << number << " -----" << endl;
+    cout << "  Категория: " << categoryToString(category) << endl;
+    cout << "  Цена за сутки: " << pricePerNight << endl;
+    cout << "  Занят: " << (isOccupied ? "да" : "нет") << endl;
+    if (isOccupied) cout << "  Гость: " << guestName << endl;
+    cout << "  Состояние: " << (isStateValid() ? "корректно" : "некорректно") << endl;
 }

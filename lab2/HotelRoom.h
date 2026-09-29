@@ -22,7 +22,12 @@ private:
 
     bool isStateValid() const;
 
-    public:
+public:
+    HotelRoom();
+
+    HotelRoom(int number, RoomCategory category, double pricePerNight);
+    
+    HotelRoom(int number, RoomCategory category, double pricePernight, const std::string& guestName);
 };
 
 #endif

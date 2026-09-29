@@ -56,3 +56,21 @@ HotelRoom::~HotelRoom() {
     objectCount--;
     cout << "[HotelRoom] Уничтожен номер №" << number << " (осталось объектов: " << objectCount << ")" << endl;
 }
+
+// Методы чтения
+int HotelRoom::getNumber() const {return number;}
+RoomCategory HotelRoom::getCategory() const {return category;}
+double HotelRoom::getPricePerNight() const {return pricePerNight;}
+bool HotelRoom::isOccupiedStatus() const {return isOccupied;}
+string HotelRoom::getGuestName() const {return guestName;}
+int HotelRoom::getObjectCount() {return objectCount;}
+
+string HotelRoom::categoryToString(RoomCategory cat) {
+    switch (cat) {
+        case RoomCategory::Economy: return "Эконом";
+        case RoomCategory::Standard: return "Стандарт";
+        case RoomCategory::Lux: return "Люкс";
+        case RoomCategory::President: return "Президентский";
+    }
+    return "Неизвестно";
+}

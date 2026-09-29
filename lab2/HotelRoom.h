@@ -37,6 +37,19 @@ public:
 
     // Деструктор
     ~HotelRoom();
+
+    // Методы чтения (const)
+    int getNumber() const;
+    RoomCategory getCategory() const;
+    double getPricePerNight() const;
+    bool isOccupiedStatus() const;
+    std::string getGuestName() const;
+
+    // Статический метод кол-ва объектов
+    static int getObjectCount();
+
+    // Преобразование категории в строку (вспомогательное)
+    static std::string categoryToString(RoomCategory cat);
 };
 
 #endif

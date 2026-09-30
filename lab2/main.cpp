@@ -40,5 +40,15 @@ int main() {
 
     cout << endl;
 
+    // Некорректные операции
+    cout << "--- Некорректные операции ---" << endl;
+    room2.checkIn("Кто-то ещё");
+    room1.checkIn("");
+    room1.checkOut();
+    room1.checkOut();
+    room2.changePrice(-500.0);
+
+    cout << endl;
+
     return 0;
 }

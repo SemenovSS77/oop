@@ -35,7 +35,7 @@ HotelRoom::HotelRoom(int number, RoomCategory category, double pricePerNight) :
 }
 
 // Параметризованный конструктор. Сразу с гостем
-HotelRoom::HotelRoom(int number, RoomCategory caterogy, double pricePerNight, const string& guestName) :
+HotelRoom::HotelRoom(int number, RoomCategory category, double pricePerNight, const string& guestName) :
     number(number),
     category(category),
     pricePerNight(pricePerNight),

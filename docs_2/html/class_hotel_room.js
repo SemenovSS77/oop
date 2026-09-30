@@ -1,0 +1,26 @@
+var class_hotel_room =
+[
+    [ "HotelRoom", "class_hotel_room.html#a9c33b605a1cd0e5010d33e37ee46e368", null ],
+    [ "HotelRoom", "class_hotel_room.html#abdd043a49c200e9f331453255e10837b", null ],
+    [ "HotelRoom", "class_hotel_room.html#a0987b0f69f406bc69e4d8c0f9659df14", null ],
+    [ "~HotelRoom", "class_hotel_room.html#ad7616d8e1e92e44468dc2c1559d75527", null ],
+    [ "categoryToString", "class_hotel_room.html#a76e864c1b2fda99a8bd17e6a38ec9a08", null ],
+    [ "changeCategory", "class_hotel_room.html#a381314b017bb383d3671d898a30299ca", null ],
+    [ "changePrice", "class_hotel_room.html#a1229c2837afe7c76f79039cadc301739", null ],
+    [ "checkIn", "class_hotel_room.html#a438c24c0fe33eef5100b6b908ba6955f", null ],
+    [ "checkOut", "class_hotel_room.html#ae4943bb69bbc86c223f4184241baf74e", null ],
+    [ "getCategory", "class_hotel_room.html#ac8a7068a10a623e01d763bddeb62692f", null ],
+    [ "getGuestName", "class_hotel_room.html#a818ae4954b41173339f603fb1d85dd06", null ],
+    [ "getNumber", "class_hotel_room.html#afc984e6c1a0018422bb3f1d8aa0e5a4a", null ],
+    [ "getObjectCount", "class_hotel_room.html#aa1c701194d626bd92a90c1e12761bf48", null ],
+    [ "getPricePerNight", "class_hotel_room.html#adb621c03f13d76587e8b3a800074ff6c", null ],
+    [ "isOccupiedStatus", "class_hotel_room.html#a57ac40efadd0b31e5395b3ed707a0563", null ],
+    [ "isStateValid", "class_hotel_room.html#ad2d3356386ac45bcb3f0f225c9e35e6c", null ],
+    [ "print", "class_hotel_room.html#ad3d4ae1deaec902abaf9631d94369087", null ],
+    [ "category", "class_hotel_room.html#aed03d141a60c9d389eb5b2bdd6601eae", null ],
+    [ "guestName", "class_hotel_room.html#a5a039d51319c5dab32e9148be939463f", null ],
+    [ "isOccupied", "class_hotel_room.html#afcc338f8e24952a960a322076d7f2a67", null ],
+    [ "number", "class_hotel_room.html#a6946c2c2a217c921ab61e35734c5c948", null ],
+    [ "objectCount", "class_hotel_room.html#a7c4c2f3d6426cc49d4d6b82ecf05cc28", null ],
+    [ "pricePerNight", "class_hotel_room.html#a37194e57b03972a2f9c80bec67a47a44", null ]
+];

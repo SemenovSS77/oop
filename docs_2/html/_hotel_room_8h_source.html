@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HotelRoom: Исходный файл HotelRoom.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HotelRoom
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_hotel_room_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">HotelRoom.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_hotel_room_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HOTELROOM_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HOTELROOM_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">   11</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7caca8afc1f2760cfc2d63b8f0e9ddb1b6f39">Economy</a>,    </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cacaeb6d8ae6f20283755b339c0dc273988b">Standard</a>,   </div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7caca5a397ddbe482febc50853e36a372dc48">Lux</a>,        </div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7caca791301f9aa89552b0e68e6670d80cd25">President</a>   </div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_hotel_room.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_hotel_room.html">HotelRoom</a> {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_hotel_room.html#a6946c2c2a217c921ab61e35734c5c948">   33</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_hotel_room.html#a6946c2c2a217c921ab61e35734c5c948">number</a>;                 </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_hotel_room.html#aed03d141a60c9d389eb5b2bdd6601eae">   34</a></span>&#160;    <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> <a class="code" href="class_hotel_room.html#aed03d141a60c9d389eb5b2bdd6601eae">category</a>;      </div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_hotel_room.html#a37194e57b03972a2f9c80bec67a47a44">   35</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_hotel_room.html#a37194e57b03972a2f9c80bec67a47a44">pricePerNight</a>;       </div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_hotel_room.html#afcc338f8e24952a960a322076d7f2a67">   36</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#afcc338f8e24952a960a322076d7f2a67">isOccupied</a>;            </div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_hotel_room.html#a5a039d51319c5dab32e9148be939463f">   37</a></span>&#160;    std::string <a class="code" href="class_hotel_room.html#a5a039d51319c5dab32e9148be939463f">guestName</a>;      </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_hotel_room.html#a7c4c2f3d6426cc49d4d6b82ecf05cc28">   40</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_hotel_room.html#a7c4c2f3d6426cc49d4d6b82ecf05cc28">objectCount</a>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#ad2d3356386ac45bcb3f0f225c9e35e6c">isStateValid</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_hotel_room.html#a9c33b605a1cd0e5010d33e37ee46e368">HotelRoom</a>();</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_hotel_room.html#a9c33b605a1cd0e5010d33e37ee46e368">HotelRoom</a>(<span class="keywordtype">int</span> <a class="code" href="class_hotel_room.html#a6946c2c2a217c921ab61e35734c5c948">number</a>, <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> <a class="code" href="class_hotel_room.html#aed03d141a60c9d389eb5b2bdd6601eae">category</a>, <span class="keywordtype">double</span> <a class="code" href="class_hotel_room.html#a37194e57b03972a2f9c80bec67a47a44">pricePerNight</a>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_hotel_room.html#a9c33b605a1cd0e5010d33e37ee46e368">HotelRoom</a>(<span class="keywordtype">int</span> <a class="code" href="class_hotel_room.html#a6946c2c2a217c921ab61e35734c5c948">number</a>, <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> <a class="code" href="class_hotel_room.html#aed03d141a60c9d389eb5b2bdd6601eae">category</a>, <span class="keywordtype">double</span> pricePernight, <span class="keyword">const</span> std::string&amp; <a class="code" href="class_hotel_room.html#a5a039d51319c5dab32e9148be939463f">guestName</a>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_hotel_room.html#ad7616d8e1e92e44468dc2c1559d75527">~HotelRoom</a>();</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_hotel_room.html#afc984e6c1a0018422bb3f1d8aa0e5a4a">getNumber</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> <a class="code" href="class_hotel_room.html#ac8a7068a10a623e01d763bddeb62692f">getCategory</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_hotel_room.html#adb621c03f13d76587e8b3a800074ff6c">getPricePerNight</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#a57ac40efadd0b31e5395b3ed707a0563">isOccupiedStatus</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::string <a class="code" href="class_hotel_room.html#a818ae4954b41173339f603fb1d85dd06">getGuestName</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_hotel_room.html#aa1c701194d626bd92a90c1e12761bf48">getObjectCount</a>();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="class_hotel_room.html#a76e864c1b2fda99a8bd17e6a38ec9a08">categoryToString</a>(<a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> cat);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#a438c24c0fe33eef5100b6b908ba6955f">checkIn</a>(<span class="keyword">const</span> std::string&amp; name);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#ae4943bb69bbc86c223f4184241baf74e">checkOut</a>();</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#a1229c2837afe7c76f79039cadc301739">changePrice</a>(<span class="keywordtype">double</span> newPrice);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_hotel_room.html#a381314b017bb383d3671d898a30299ca">changeCategory</a>(<a class="code" href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a> newCategory);</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_hotel_room.html#ad3d4ae1deaec902abaf9631d94369087">print</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_hotel_room_html_ad2d3356386ac45bcb3f0f225c9e35e6c"><div class="ttname"><a href="class_hotel_room.html#ad2d3356386ac45bcb3f0f225c9e35e6c">HotelRoom::isStateValid</a></div><div class="ttdeci">bool isStateValid() const</div><div class="ttdoc">Проверка инвариантов состояния объекта </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00188">HotelRoom.cpp:188</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a381314b017bb383d3671d898a30299ca"><div class="ttname"><a href="class_hotel_room.html#a381314b017bb383d3671d898a30299ca">HotelRoom::changeCategory</a></div><div class="ttdeci">bool changeCategory(RoomCategory newCategory)</div><div class="ttdoc">Изменить категорию номера </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00176">HotelRoom.cpp:176</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a9c33b605a1cd0e5010d33e37ee46e368"><div class="ttname"><a href="class_hotel_room.html#a9c33b605a1cd0e5010d33e37ee46e368">HotelRoom::HotelRoom</a></div><div class="ttdeci">HotelRoom()</div><div class="ttdoc">Конструктор по умолчанию </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00013">HotelRoom.cpp:13</a></div></div>
+<div class="ttc" id="class_hotel_room_html_adb621c03f13d76587e8b3a800074ff6c"><div class="ttname"><a href="class_hotel_room.html#adb621c03f13d76587e8b3a800074ff6c">HotelRoom::getPricePerNight</a></div><div class="ttdeci">double getPricePerNight() const</div><div class="ttdoc">Получить цену за сутки </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00083">HotelRoom.cpp:83</a></div></div>
+<div class="ttc" id="_hotel_room_8h_html_a23fe024dc6c70f80fef8eb80f75d7caca8afc1f2760cfc2d63b8f0e9ddb1b6f39"><div class="ttname"><a href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7caca8afc1f2760cfc2d63b8f0e9ddb1b6f39">RoomCategory::Economy</a></div><div class="ttdoc">Эконом </div></div>
+<div class="ttc" id="_hotel_room_8h_html_a23fe024dc6c70f80fef8eb80f75d7caca791301f9aa89552b0e68e6670d80cd25"><div class="ttname"><a href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7caca791301f9aa89552b0e68e6670d80cd25">RoomCategory::President</a></div><div class="ttdoc">Президентский </div></div>
+<div class="ttc" id="class_hotel_room_html_a6946c2c2a217c921ab61e35734c5c948"><div class="ttname"><a href="class_hotel_room.html#a6946c2c2a217c921ab61e35734c5c948">HotelRoom::number</a></div><div class="ttdeci">int number</div><div class="ttdoc">Номер комнаты (должен быть &gt; 0) </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00033">HotelRoom.h:33</a></div></div>
+<div class="ttc" id="class_hotel_room_html_aed03d141a60c9d389eb5b2bdd6601eae"><div class="ttname"><a href="class_hotel_room.html#aed03d141a60c9d389eb5b2bdd6601eae">HotelRoom::category</a></div><div class="ttdeci">RoomCategory category</div><div class="ttdoc">Категория номера </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00034">HotelRoom.h:34</a></div></div>
+<div class="ttc" id="class_hotel_room_html_afc984e6c1a0018422bb3f1d8aa0e5a4a"><div class="ttname"><a href="class_hotel_room.html#afc984e6c1a0018422bb3f1d8aa0e5a4a">HotelRoom::getNumber</a></div><div class="ttdeci">int getNumber() const</div><div class="ttdoc">Получить номер комнаты </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00077">HotelRoom.cpp:77</a></div></div>
+<div class="ttc" id="_hotel_room_8h_html_a23fe024dc6c70f80fef8eb80f75d7cac"><div class="ttname"><a href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac">RoomCategory</a></div><div class="ttdeci">RoomCategory</div><div class="ttdoc">Категория гостиничного номера. </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00011">HotelRoom.h:11</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a7c4c2f3d6426cc49d4d6b82ecf05cc28"><div class="ttname"><a href="class_hotel_room.html#a7c4c2f3d6426cc49d4d6b82ecf05cc28">HotelRoom::objectCount</a></div><div class="ttdeci">static int objectCount</div><div class="ttdoc">Статический счётчик существующих объектов </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00040">HotelRoom.h:40</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a37194e57b03972a2f9c80bec67a47a44"><div class="ttname"><a href="class_hotel_room.html#a37194e57b03972a2f9c80bec67a47a44">HotelRoom::pricePerNight</a></div><div class="ttdeci">double pricePerNight</div><div class="ttdoc">Цена за сутки (должна быть &gt;= 0) </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00035">HotelRoom.h:35</a></div></div>
+<div class="ttc" id="_hotel_room_8h_html_a23fe024dc6c70f80fef8eb80f75d7caca5a397ddbe482febc50853e36a372dc48"><div class="ttname"><a href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7caca5a397ddbe482febc50853e36a372dc48">RoomCategory::Lux</a></div><div class="ttdoc">Люкс </div></div>
+<div class="ttc" id="_hotel_room_8h_html_a23fe024dc6c70f80fef8eb80f75d7cacaeb6d8ae6f20283755b339c0dc273988b"><div class="ttname"><a href="_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cacaeb6d8ae6f20283755b339c0dc273988b">RoomCategory::Standard</a></div><div class="ttdoc">Стандарт </div></div>
+<div class="ttc" id="class_hotel_room_html_a5a039d51319c5dab32e9148be939463f"><div class="ttname"><a href="class_hotel_room.html#a5a039d51319c5dab32e9148be939463f">HotelRoom::guestName</a></div><div class="ttdeci">std::string guestName</div><div class="ttdoc">Имя гостя (пустое, если номер свободен) </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00037">HotelRoom.h:37</a></div></div>
+<div class="ttc" id="class_hotel_room_html_ad3d4ae1deaec902abaf9631d94369087"><div class="ttname"><a href="class_hotel_room.html#ad3d4ae1deaec902abaf9631d94369087">HotelRoom::print</a></div><div class="ttdeci">void print() const</div><div class="ttdoc">Вывести состояние номера </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00198">HotelRoom.cpp:198</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a76e864c1b2fda99a8bd17e6a38ec9a08"><div class="ttname"><a href="class_hotel_room.html#a76e864c1b2fda99a8bd17e6a38ec9a08">HotelRoom::categoryToString</a></div><div class="ttdeci">static std::string categoryToString(RoomCategory cat)</div><div class="ttdoc">Преобразовать категорию в строку </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00107">HotelRoom.cpp:107</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a818ae4954b41173339f603fb1d85dd06"><div class="ttname"><a href="class_hotel_room.html#a818ae4954b41173339f603fb1d85dd06">HotelRoom::getGuestName</a></div><div class="ttdeci">std::string getGuestName() const</div><div class="ttdoc">Получить имя гостя (пусто, если номер свободен) </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00089">HotelRoom.cpp:89</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a438c24c0fe33eef5100b6b908ba6955f"><div class="ttname"><a href="class_hotel_room.html#a438c24c0fe33eef5100b6b908ba6955f">HotelRoom::checkIn</a></div><div class="ttdeci">bool checkIn(const std::string &amp;name)</div><div class="ttdoc">Заселить гостя в номер </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00123">HotelRoom.cpp:123</a></div></div>
+<div class="ttc" id="class_hotel_room_html_aa1c701194d626bd92a90c1e12761bf48"><div class="ttname"><a href="class_hotel_room.html#aa1c701194d626bd92a90c1e12761bf48">HotelRoom::getObjectCount</a></div><div class="ttdeci">static int getObjectCount()</div><div class="ttdoc">Получить текущее количество существующих объектов </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00095">HotelRoom.cpp:95</a></div></div>
+<div class="ttc" id="class_hotel_room_html_ac8a7068a10a623e01d763bddeb62692f"><div class="ttname"><a href="class_hotel_room.html#ac8a7068a10a623e01d763bddeb62692f">HotelRoom::getCategory</a></div><div class="ttdeci">RoomCategory getCategory() const</div><div class="ttdoc">Получить категорию номера </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00080">HotelRoom.cpp:80</a></div></div>
+<div class="ttc" id="class_hotel_room_html_afcc338f8e24952a960a322076d7f2a67"><div class="ttname"><a href="class_hotel_room.html#afcc338f8e24952a960a322076d7f2a67">HotelRoom::isOccupied</a></div><div class="ttdeci">bool isOccupied</div><div class="ttdoc">Занят ли номер </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00036">HotelRoom.h:36</a></div></div>
+<div class="ttc" id="class_hotel_room_html_ae4943bb69bbc86c223f4184241baf74e"><div class="ttname"><a href="class_hotel_room.html#ae4943bb69bbc86c223f4184241baf74e">HotelRoom::checkOut</a></div><div class="ttdeci">bool checkOut()</div><div class="ttdoc">Выселить гостя из номера </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00143">HotelRoom.cpp:143</a></div></div>
+<div class="ttc" id="class_hotel_room_html_ad7616d8e1e92e44468dc2c1559d75527"><div class="ttname"><a href="class_hotel_room.html#ad7616d8e1e92e44468dc2c1559d75527">HotelRoom::~HotelRoom</a></div><div class="ttdeci">~HotelRoom()</div><div class="ttdoc">Деструктор. Уменьшает счётчик объектов </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00071">HotelRoom.cpp:71</a></div></div>
+<div class="ttc" id="class_hotel_room_html"><div class="ttname"><a href="class_hotel_room.html">HotelRoom</a></div><div class="ttdoc">Класс, описывающий гостиничный номер </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8h_source.html#l00031">HotelRoom.h:31</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a57ac40efadd0b31e5395b3ed707a0563"><div class="ttname"><a href="class_hotel_room.html#a57ac40efadd0b31e5395b3ed707a0563">HotelRoom::isOccupiedStatus</a></div><div class="ttdeci">bool isOccupiedStatus() const</div><div class="ttdoc">Узнать, занят ли номер </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00086">HotelRoom.cpp:86</a></div></div>
+<div class="ttc" id="class_hotel_room_html_a1229c2837afe7c76f79039cadc301739"><div class="ttname"><a href="class_hotel_room.html#a1229c2837afe7c76f79039cadc301739">HotelRoom::changePrice</a></div><div class="ttdeci">bool changePrice(double newPrice)</div><div class="ttdoc">Изменить цену за сутки </div><div class="ttdef"><b>Definition:</b> <a href="_hotel_room_8cpp_source.html#l00160">HotelRoom.cpp:160</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_hotel_room_8h.html">HotelRoom.h</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

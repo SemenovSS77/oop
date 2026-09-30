@@ -50,5 +50,30 @@ int main() {
 
     cout << endl;
 
+    // Повторный вывод. Состояние должно остаться корректным
+    cout << "--- Состояние после всех операций ---" << endl;
+    room1.print();
+    room2.print();
+    room3.print();
+    cout << endl;
+
+    // Проверка независимости объектов
+    cout << "--- Проверка независимости объектов ---" << endl;
+    cout << "До изменения room1:" << endl;
+    cout << " room2.getPricePerNight() = " << room2.getPricePerNight() << endl;
+    cout << " room3.getPricePerNight() = " << room3.getPricePerNight() << endl;
+
+    // Меняем только room1
+    room1.changePrice(99999.0);
+
+    cout << "После изменения room1 (room1 = 99999):" << endl;
+    cout << " room1.getPricePerNight() = " << room1.getPricePerNight() << endl;
+    cout << " room2.getPricePerNight() = " << room2.getPricePerNight() << "<- не изменилось" << endl;
+    cout << " room3.getPricePerNight() = " << room3.getPricePerNight() << "<- не изменилось" << endl;
+
+    cout << endl;
+
+    cout << "--- Завершение программы. Вызов деструкторов ---" << endl;
+
     return 0;
 }

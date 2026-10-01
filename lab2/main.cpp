@@ -11,8 +11,6 @@
 #include <clocale>
 #include "HotelRoom.h"
 
-using namespace std;
-
 /**
  * @brief Точка входа в программу.
  *

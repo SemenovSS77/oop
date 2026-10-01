@@ -2,6 +2,7 @@
 #define HOTELROOM_H
 
 #include <string>
+using namespace std;
 
 /**
  * @brief Категория гостиничного номера.
@@ -34,7 +35,7 @@ private:
     RoomCategory category;      ///< Категория номера
     double pricePerNight;       ///< Цена за сутки (должна быть >= 0)
     bool isOccupied;            ///< Занят ли номер
-    std::string guestName;      ///< Имя гостя (пустое, если номер свободен)
+    string guestName;      ///< Имя гостя (пустое, если номер свободен)
 
     /// Статический счётчик существующих объектов
     static int objectCount;
@@ -69,7 +70,7 @@ public:
      * @param pricePerNight Цена за сутки. Если < 0, приводится к 0
      * @param guestName Имя гостя. Если не пустое, номер помечается занятым
      */
-    HotelRoom(int number, RoomCategory category, double pricePernight, const std::string& guestName);
+    HotelRoom(int number, RoomCategory category, double pricePernight, const string& guestName);
 
     /// Деструктор. Уменьшает счётчик объектов
     ~HotelRoom();
@@ -87,7 +88,7 @@ public:
     bool isOccupiedStatus() const;
 
     /// @brief Получить имя гостя (пусто, если номер свободен)
-    std::string getGuestName() const;
+    string getGuestName() const;
 
     /**
      * @brief Получить текущее количество существующих объектов
@@ -100,14 +101,14 @@ public:
      * @param cat Категория номера
      * @return Строковое представление категории ("Эконом", "Стандарт", ...)
      */
-    static std::string categoryToString(RoomCategory cat);
+    static string categoryToString(RoomCategory cat);
 
     /**
      * @brief Заселить гостя в номер
      * @param name Имя гостя (не должно быть пустым)
      * @return true при успехе, false если имя пустое или номер уже занят
      */
-    bool checkIn(const std::string& name);
+    bool checkIn(const string& name);
 
     /**
      * @brief Выселить гостя из номера

@@ -83,6 +83,8 @@ int main() {
     cout << "До изменения room1:" << endl;
     cout << " room2.getPricePerNight() = " << room2.getPricePerNight() << endl;
     cout << " room3.getPricePerNight() = " << room3.getPricePerNight() << endl;
+    
+    cout << endl;
 
     // Меняем только room1
     room1.changePrice(99999.0);

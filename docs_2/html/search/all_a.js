@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['roomcategory',['RoomCategory',['../_hotel_room_8h.html#a23fe024dc6c70f80fef8eb80f75d7cac',1,'HotelRoom.h']]]
+  ['roomcategory',['RoomCategory',['../class_room_category.html',1,'RoomCategory'],['../class_room_category.html#a960ffb1c802e271a24ec1e2a402f4776',1,'RoomCategory::RoomCategory()']]]
 ];

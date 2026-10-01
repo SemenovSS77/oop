@@ -1,12 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "ceghilmnoprs~",
-  1: "h",
+  0: "ceghilmnoprst~",
+  1: "hr",
   2: "hm",
-  3: "cghimp~",
-  4: "cginop",
-  5: "r",
-  6: "elps"
+  3: "ceghilmprst~",
+  4: "cginop"
 };
 
 var indexSectionNames =
@@ -15,9 +13,7 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables",
-  5: "enums",
-  6: "enumvalues"
+  4: "variables"
 };
 
 var indexSectionLabels =
@@ -26,8 +22,6 @@ var indexSectionLabels =
   1: "Классы",
   2: "Файлы",
   3: "Функции",
-  4: "Переменные",
-  5: "Перечисления",
-  6: "Элементы перечислений"
+  4: "Переменные"
 };
 

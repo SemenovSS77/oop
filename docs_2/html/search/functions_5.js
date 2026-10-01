@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print',['print',['../class_hotel_room.html#ad3d4ae1deaec902abaf9631d94369087',1,'HotelRoom']]]
+  ['lux',['lux',['../class_room_category.html#adbce289f7034dbdb766208f85eb69da2',1,'RoomCategory']]]
 ];

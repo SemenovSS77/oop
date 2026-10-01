@@ -12,7 +12,7 @@ int HotelRoom::objectCount = 0;
  */
 HotelRoom::HotelRoom() :
     number(1),
-    category(RoomCategory::Economy),
+    category(RoomCategory::economy()),
     pricePerNight(1000.0),
     isOccupied(false),
     guestName("")
@@ -105,13 +105,7 @@ int HotelRoom::getObjectCount() {return objectCount;}
  * @retval "Неизвестно"      для некорректного значения
  */
 string HotelRoom::categoryToString(RoomCategory cat) {
-    switch (cat) {
-        case RoomCategory::Economy: return "Эконом";
-        case RoomCategory::Standard: return "Стандарт";
-        case RoomCategory::Lux: return "Люкс";
-        case RoomCategory::President: return "Президентский";
-    }
-    return "Неизвестно";
+    return cat.toString();
 }
 
 /**

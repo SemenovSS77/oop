@@ -9,11 +9,40 @@ using namespace std;
  *
  * Пользовательский перечисляемый тип, определяющий уровень комфорта номера
  */
-enum class RoomCategory {
-    Economy,    ///< Эконом
-    Standard,   ///< Стандарт
-    Lux,        ///< Люкс
-    President   ///< Президентский
+
+class RoomCategory {
+private:
+    int code;   ///< 0 - Эконом, 1 - Стандарт, 2 - Люкс, 3 - Президентский
+
+public:
+    /**
+     * @brief Конструктор с кодом категории
+     * @param code Код в диапазоне [0, 3]. Иначе приводится к 0 (Economy)
+     */
+    RoomCategory(int code) {
+        if (code < 0 || code > 3) this->code = 0;
+        else this->code = code;
+    }
+
+    /**
+     * @brief Преобразовать категорию в строку
+     * @return "Эконом", "Стандарт", "Люкс" или "Президентский"
+     */
+    string toString() const {
+        switch (code) {
+            case 0: return "Эконом";
+            case 1: return "Стандарт";
+            case 2: return "Люкс";
+            case 3: return "Президентский";
+        }
+        return "Неизвестно";
+    }
+
+    /// @brief Фабрики для читаемости 
+    static RoomCategory economy() {return RoomCategory(0);}
+    static RoomCategory standard() {return RoomCategory(1);}
+    static RoomCategory lux() {return RoomCategory(2);}
+    static RoomCategory president() {return RoomCategory(3);}
 };
 
 /**

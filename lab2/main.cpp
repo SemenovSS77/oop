@@ -33,8 +33,8 @@ int main() {
     // Создание объектов разными конструкторами 
     cout << "--- Создание объектов ---" << endl;
     HotelRoom room1; // по умолчанию
-    HotelRoom room2(305, RoomCategory::Standard, 2500.0); // параметризованный
-    HotelRoom room3(701, RoomCategory::Lux, 8000.0, "Петров И. А."); // параметризованный с постояльцем
+    HotelRoom room2(305, RoomCategory::standard(), 2500.0); // параметризованный
+    HotelRoom room3(701, RoomCategory::lux(), 8000.0, "Петров И. А."); // параметризованный с постояльцем
 
     cout << endl;
 
@@ -51,7 +51,7 @@ int main() {
     cout << "--- Корректные операции ---" << endl;
     room2.checkIn("Петров И. А.");
     room2.changePrice(3000.0);
-    room2.changeCategory(RoomCategory::Lux);
+    room2.changeCategory(RoomCategory::lux());
 
     room1.checkIn("Сидоров С.С.");
     room1.changePrice(1500.0);

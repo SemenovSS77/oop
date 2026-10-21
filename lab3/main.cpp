@@ -28,5 +28,13 @@ int main() {
     cout << "После u--: "; u.print(); cout << endl;
     cout << endl; 
 
+    cout << "-- Арифметическое присваивание --" << endl;
+    Fraction a(1, 2), b(1, 3);
+    a += b; cout << "1/2 += 1/3 = "; a.print(); cout << endl;
+    a -= b; cout << "5/6 -= 1/3 = "; a.print(); cout << endl;
+    a *= b; cout << "1/2 *= 1/3 = "; a.print(); cout << endl;
+    a /= b; cout << "1/6 /= 1/3 = "; a.print(); cout << endl;
+    cout << endl;
+
     return 0;
 }

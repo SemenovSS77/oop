@@ -99,3 +99,40 @@ Fraction Fraction::operator--(int) {
     --(*this);
     return temp;
 }
+
+// Арифметическое присваивание
+Fraction& Fraction::operator+=(const Fraction& other) {
+    numerator = numerator * other.denominator + other.numerator * denominator;
+    denominator *= other.denominator;
+    normalize();
+    history.push_back("+= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    return *this;
+}
+
+Fraction& Fraction::operator-=(const Fraction& other) {
+    numerator = numerator * other.denominator - other.numerator * denominator;
+    denominator *= other.denominator;
+    normalize();
+    history.push_back("-= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    return *this;
+}
+
+Fraction& Fraction::operator*=(const Fraction& other) {
+    numerator *= other.numerator;
+    denominator *= other.denominator;
+    normalize();
+    history.push_back("*= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    return *this;
+}
+
+Fraction& Fraction::operator/=(const Fraction& other) {
+    if (other.numerator == 0) {
+        cerr << "Ошибка. Деление на ноль-дробь" << endl;
+        return *this;
+    }
+    numerator *= other.denominator;
+    denominator *= other.numerator;
+    normalize();
+    history.push_back("/= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    return *this;
+}

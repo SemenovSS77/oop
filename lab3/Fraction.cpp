@@ -1,17 +1,17 @@
 #include "Fraction.h"
 #include <numeric>
-#include <cmath>
-#include <stdexcept>
 
 using namespace std;
 
 int Fraction::totalOperations = 0;
+int Fraction::destroyedCount = 0;
 
 void Fraction::normalize() {
     if (denominator < 0) {
         numerator = -numerator;
         denominator = -denominator;
     }
+
     int g = gcd(abs(numerator), denominator);
     if (g > 1) {
         numerator /= g;
@@ -46,13 +46,14 @@ Fraction::Fraction(int value) :
 }
 
 Fraction::~Fraction() {
-    cout << "[Fraction] Уничтожена дробь " << numerator << "/" << denominator << endl;
+    destroyedCount++;
 }
 
 int Fraction::getNumerator() const {return numerator;}
 int Fraction::getDenominator() const {return denominator;}
 int Fraction::getTotalOperations() {return totalOperations;}
-void Fraction::resetTotalOperations() { totalOperations = 0; }
+void Fraction::resetTotalOperations() {totalOperations = 0;}
+int Fraction::getDestroyedCount() {return destroyedCount;}
 
 
 void Fraction::print() const {

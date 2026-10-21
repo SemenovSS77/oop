@@ -6,6 +6,8 @@ using namespace std;
 
 int main() {
     setlocale(LC_ALL, ".UTF-8");
+    
+    {
     cout << "--- Тест класса Fraction ---" << endl;
 
     cout << "-- Создание объектов --" << endl;
@@ -15,7 +17,7 @@ int main() {
     cout << "f1 = "; f1.print(); cout << endl;
     cout << "f2 = "; f2.print(); cout << endl;
     cout << "f3 = "; f3.print(); cout << endl;
-    cout << "Всего объектов: " << Fraction::getTotalOperations() << endl;
+    cout << "Всего операций после создания: " << Fraction::getTotalOperations() << endl;
 
     cout << "-- Унарные операторы --" << endl;
     Fraction u(3, 4);
@@ -45,9 +47,9 @@ int main() {
     cout << endl;
 
     cout << "-- Сравнения --" << endl;
-    Fraction c1(1, 2), c2(2, 3), c3(1, 3);
+    Fraction c1(1, 2), c2(2, 3), c3(1, 2);
     cout << "1/2 < 2/3 : " << (c1 < c2 ? "T" : "F") << endl;
-    cout << "1/2 < 2/3 : " << (c1 > c2 ? "T" : "F") << endl;
+    cout << "1/2 > 2/3 : " << (c1 > c2 ? "T" : "F") << endl;
     cout << "1/2 <= 2/3 : " << (c1 <= c2 ? "T" : "F") << endl;
     cout << "1/2 >= 2/3: " << (c1 >= c2 ? "T" : "F") << endl;
     cout << "1/2 == 1/2: " << (c1 == c3 ? "T" : "F") << endl;
@@ -57,8 +59,8 @@ int main() {
     // explicit
     cout << "-- explicit --" << endl;
     Fraction ex1(5);
-    cout << "Fraction ex(5) - явный вызов: "; ex1.print(); cout << endl;
-    cout << "Строка 'Fraction ex2 = 5;' не компилируется из-за explicit!!'" << endl << endl;
+    cout << "Fraction ex(5): "; ex1.print(); cout << endl;
+    // Fraction ex2 = 5;
 
     // mutable
     cout << "-- mutable --" << endl;
@@ -78,6 +80,9 @@ int main() {
     cout << endl;
 
     cout << "-- Завершение --" << endl;
+    }
+
+    cout << "Уничтожено объектов: " << Fraction::getDestroyedCount() << endl;
 
     return 0;
 }

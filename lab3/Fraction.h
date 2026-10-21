@@ -13,6 +13,7 @@ private:
     int denominator; // Знаменатель
     mutable vector<string> history; // История операций
     static int totalOperations; // Счетчик операций
+    static int destroyedCount; // Счетчик удаленных
 
     void normalize();
 
@@ -30,6 +31,7 @@ public:
     int getDenominator() const;
     static int getTotalOperations();
     static void resetTotalOperations();
+    static int getDestroyedCount();
 
     // Вывод
     void print() const;

@@ -52,7 +52,29 @@ int main() {
     cout << "1/2 >= 2/3: " << (c1 >= c2 ? "T" : "F") << endl;
     cout << "1/2 == 1/2: " << (c1 == c3 ? "T" : "F") << endl;
     cout << "1/2 != 2/3: " << (c1 != c2 ? "T" : "F") << endl;
-    cout << endl; 
+    cout << endl;
+
+    // explicit
+    cout << "-- explicit --";
+    Fraction ex1(5);
+    cout << "Fraction ex(5) - явный вызов: "; ex1.print() << cout << endl;
+    cout << "Строка 'Fraction ex2 = 5;' не компилируется из-за explicit!!'" << endl << endl;
+
+    // mutable
+    cout << "-- mutable --";
+    const Fraction constFrac(3, 4);
+    cout << "конст-объект: "; constFrac.print(); cout << endl;
+    constFrac.addHistoryEntry("Ручная запись в конст-объект");
+    cout << "История const-объекта (mutable):" << endl;
+    constFrac.printHistory();
+    cout << endl;
+
+    // История операций
+    cout << "-- История операций --" << endl;
+    u.printHistory();
+    cout << endl;
+
+    cout << "-- Завершение --" << endl;
 
     return 0;
 }

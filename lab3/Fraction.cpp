@@ -53,6 +53,15 @@ Fraction::~Fraction() {
     cout << "[Fraction] Уничтожена дробь " << numberator << "/" << denominator << " (осталось объектов: " << objectCount << ")" << endl;
 }
 
+int Fraction::getNumerator() const {return numerator;}
+int Fraction::getDenominator() const {return denominator;}
+int Fraction::getObjectCount() {return objectCount;}
+
+
+void Fraction::print() const {
+    cout << numerator << "/" << denominator;
+}
+
 void Fraction::printHistory() const {
     cout << "История объекта " << numerator << "/" << denominator << ":" << endl;
     for (size_t i = 0; i < history.size(); i++) {
@@ -62,4 +71,31 @@ void Fraction::printHistory() const {
 
 void Fraction::addHistoryEntry(const string& entry) const {
     history.push_back(entry);
+}
+
+// Унарные операторы
+Fraction& Fraction::operator++() {
+    numerator += denominator;
+    normalize();
+    history.push_back("Префиксный ++: стало " + to_string(numerator) + "/" + to_string(denominator));
+    return *this;
+}
+
+Fraction Fraction::operator++(int) {
+    Fraction temp = *this;
+    ++(*this);
+    return temp;
+}
+
+Fraction& Fraction::operator--() {
+    numerator -= denominator;
+    normalize();
+    history.push_back("Префиксный --: стало " + to_string(numerator) + "/" + to_string(denominator));
+    return *this;
+}
+
+Fraction Fraction::operator--(int) {
+    Fraction temp = *this;
+    --(*this);
+    return temp;
 }

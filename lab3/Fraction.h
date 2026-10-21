@@ -33,6 +33,12 @@ public:
     // Вывод
     void print() const;
     void printHistory() const;
+
+    // Унарные операторы
+    Fraction& operator++();
+    Fraction operator++(int);
+    Fraction& operator--();
+    Fraction operator--(int);
 };
 
 #endif

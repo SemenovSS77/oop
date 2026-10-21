@@ -52,6 +52,14 @@ public:
     friend Fraction operator-(Fraction lhs, const Fraction& rhs);
     friend Fraction operator*(Fraction lhs, const Fraction& rhs);
     friend Fraction operator/(Fraction lhs, const Fraction& rhs);
+
+    // Сравнения
+    friend bool operator<(const Fraction& a, const Fraction& b);
+    friend bool operator>(const Fraction& a, const Fraction& b);
+    friend bool operator<=(const Fraction& a, const Fraction& b);
+    friend bool operator>=(const Fraction& a, const Fraction& b);
+    friend bool operator==(const Fraction& a, const Fraction& b);
+    friend bool operator!=(const Fraction& a, const Fraction& b);
 };
 
 #endif

@@ -44,5 +44,15 @@ int main() {
     cout << "1/2 / 1/3 = "; (x / y).print(); cout << endl;
     cout << endl;
 
+    cout << "-- Сравнения --" << endl;
+    Fraction c1(1, 2), c2(2, 3), c3(1, 3);
+    cout << "1/2 < 2/3 : " << (c1 < c2 ? "T" : "F") << endl;
+    cout << "1/2 < 2/3 : " << (c1 > c2 ? "T" : "F") << endl;
+    cout << "1/2 <= 2/3 : " << (c1 <= c2 ? "T" : "F") << endl;
+    cout << "1/2 >= 2/3: " << (c1 >= c2 ? "T" : "F") << endl;
+    cout << "1/2 == 1/2: " << (c1 == c3 ? "T" : "F") << endl;
+    cout << "1/2 != 2/3: " << (c1 != c2 ? "T" : "F") << endl;
+    cout << endl; 
+
     return 0;
 }

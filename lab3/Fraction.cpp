@@ -157,3 +157,28 @@ Fraction operator/(Fraction lhs, const Fraction& rhs) {
     lhs /= rhs;
     return lhs
 }
+
+// Сравнения
+bool operator<(const Fraction& a, const Fraction& b) {
+    return a.numerator * b.denominator < b.numerator * a.denominator;
+}
+
+bool operator>(const Fraction& a, const Fraction& b) {
+    return b < a;
+}
+
+bool operator<=(const Fraction& a, const Fraction& b) {
+    return !(b < a);
+}
+
+bool operator>=(const Fraction& a, const Fraction& b) {
+    return !(a < b);
+}
+
+bool operator==(const Fraction& a, const Fraction& b) {
+    return a.numerator == b.numerator && a.denominator == b.denominator;
+}
+
+bool operator!=(const Fraction& a, const Fraction& b) {
+    return !(a == b);
+}

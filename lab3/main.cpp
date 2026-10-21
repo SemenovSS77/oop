@@ -36,5 +36,13 @@ int main() {
     a /= b; cout << "1/6 /= 1/3 = "; a.print(); cout << endl;
     cout << endl;
 
+    cout << "-- Бинарные арифметические --" << endl;
+    Fraction x(1, 2), y(1, 3);
+    cout << "1/2 + 1/3 = "; (x + y).print(); cout << endl;
+    cout << "1/2 - 1/3 = "; (x - y).print(); cout << endl;
+    cout << "1/2 * 1/3 = "; (x * y).print(); cout << endl;
+    cout << "1/2 / 1/3 = "; (x / y).print(); cout << endl;
+    cout << endl;
+
     return 0;
 }

@@ -136,3 +136,24 @@ Fraction& Fraction::operator/=(const Fraction& other) {
     history.push_back("/= " + to_string(other.numerator) + "/" + to_string(other.denominator));
     return *this;
 }
+
+// Бинарные через присваивание
+Fraction operator+(Fraction lhs, const Fraction& rhs) {
+    lhs += rhs;
+    return lhs
+}
+
+Fraction operator-(Fraction lhs, const Fraction& rhs) {
+    lhs -= rhs;
+    return lhs
+}
+
+Fraction operator*(Fraction lhs, const Fraction& rhs) {
+    lhs *= rhs;
+    return lhs
+}
+
+Fraction operator/(Fraction lhs, const Fraction& rhs) {
+    lhs /= rhs;
+    return lhs
+}

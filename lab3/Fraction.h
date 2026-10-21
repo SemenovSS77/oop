@@ -46,6 +46,12 @@ public:
     Fraction& operator-=(const Fraction& other);
     Fraction& operator*=(const Fraction& other);
     Fraction& operator/=(const Fraction& other);
+
+    // Бинарные арифметические
+    friend Fraction operator+(Fraction lhs, const Fraction& rhs);
+    friend Fraction operator-(Fraction lhs, const Fraction& rhs);
+    friend Fraction operator*(Fraction lhs, const Fraction& rhs);
+    friend Fraction operator/(Fraction lhs, const Fraction& rhs);
 };
 
 #endif

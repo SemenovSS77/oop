@@ -40,7 +40,26 @@ Fraction::Fraction(int num, int den) :
     history.push_back("Создана дробь: " + to_string(numerator) + "/" to_string(denominator));
 }
 
+Fraction::Fraction(int value) :
+    numerator(value),
+    denominator(1)
+{
+    objectCount++;
+    history.push_back("Создана дробь из целого: " + to_string(value));
+}
+
 Fraction::~Fraction() {
     objectCount--;
     cout << "[Fraction] Уничтожена дробь " << numberator << "/" << denominator << " (осталось объектов: " << objectCount << ")" << endl;
+}
+
+void Fraction::printHistory() const {
+    cout << "История объекта " << numerator << "/" << denominator << ":" << endl;
+    for (size_t i = 0; i < history.size(); i++) {
+        cout << " " << (i + 1) << ". " << history[i] << endl;
+    }
+}
+
+void Fraction::addHistoryEntry(const string& entry) const {
+    history.push_back(entry);
 }

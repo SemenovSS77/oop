@@ -15,7 +15,7 @@ int main() {
     cout << "f1 = "; f1.print(); cout << endl;
     cout << "f2 = "; f2.print(); cout << endl;
     cout << "f3 = "; f3.print(); cout << endl;
-    cout << "Всего объектов: " << Fraction::getObjectCount() << endl;
+    cout << "Всего объектов: " << Fraction::getTotalOperations() << endl;
 
     cout << "-- Унарные операторы --" << endl;
     Fraction u(3, 4);
@@ -55,13 +55,13 @@ int main() {
     cout << endl;
 
     // explicit
-    cout << "-- explicit --";
+    cout << "-- explicit --" << endl;
     Fraction ex1(5);
-    cout << "Fraction ex(5) - явный вызов: "; ex1.print() << cout << endl;
+    cout << "Fraction ex(5) - явный вызов: "; ex1.print(); cout << endl;
     cout << "Строка 'Fraction ex2 = 5;' не компилируется из-за explicit!!'" << endl << endl;
 
     // mutable
-    cout << "-- mutable --";
+    cout << "-- mutable --" << endl;
     const Fraction constFrac(3, 4);
     cout << "конст-объект: "; constFrac.print(); cout << endl;
     constFrac.addHistoryEntry("Ручная запись в конст-объект");
@@ -72,6 +72,9 @@ int main() {
     // История операций
     cout << "-- История операций --" << endl;
     u.printHistory();
+    cout << endl;
+
+    cout << "Всего операций выполнено: " << Fraction::getTotalOperations() << endl;
     cout << endl;
 
     cout << "-- Завершение --" << endl;

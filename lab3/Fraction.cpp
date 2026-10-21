@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int Fraction::objectCount = 0;
+int Fraction::totalOperations = 0;
 
 void Fraction::normalize() {
     if (denominator < 0) {
@@ -23,7 +23,6 @@ Fraction::Fraction() :
     numerator(0),
     denominator(1)
 {
-    objectCount++;
     history.push_back("Создана дробь по умолчанию: 0/1");
 }
 
@@ -36,26 +35,24 @@ Fraction::Fraction(int num, int den) :
         denominator = 1;
     }
     normalize();
-    objectCount++;
-    history.push_back("Создана дробь: " + to_string(numerator) + "/" to_string(denominator));
+    history.push_back("Создана дробь: " + to_string(numerator) + "/" + to_string(denominator));
 }
 
 Fraction::Fraction(int value) :
     numerator(value),
     denominator(1)
 {
-    objectCount++;
     history.push_back("Создана дробь из целого: " + to_string(value));
 }
 
 Fraction::~Fraction() {
-    objectCount--;
-    cout << "[Fraction] Уничтожена дробь " << numberator << "/" << denominator << " (осталось объектов: " << objectCount << ")" << endl;
+    cout << "[Fraction] Уничтожена дробь " << numerator << "/" << denominator << endl;
 }
 
 int Fraction::getNumerator() const {return numerator;}
 int Fraction::getDenominator() const {return denominator;}
-int Fraction::getObjectCount() {return objectCount;}
+int Fraction::getTotalOperations() {return totalOperations;}
+void Fraction::resetTotalOperations() { totalOperations = 0; }
 
 
 void Fraction::print() const {
@@ -75,6 +72,7 @@ void Fraction::addHistoryEntry(const string& entry) const {
 
 // Унарные операторы
 Fraction& Fraction::operator++() {
+    totalOperations++;
     numerator += denominator;
     normalize();
     history.push_back("Префиксный ++: стало " + to_string(numerator) + "/" + to_string(denominator));
@@ -88,6 +86,7 @@ Fraction Fraction::operator++(int) {
 }
 
 Fraction& Fraction::operator--() {
+    totalOperations++;
     numerator -= denominator;
     normalize();
     history.push_back("Префиксный --: стало " + to_string(numerator) + "/" + to_string(denominator));
@@ -102,6 +101,7 @@ Fraction Fraction::operator--(int) {
 
 // Арифметическое присваивание
 Fraction& Fraction::operator+=(const Fraction& other) {
+    totalOperations++;
     numerator = numerator * other.denominator + other.numerator * denominator;
     denominator *= other.denominator;
     normalize();
@@ -110,6 +110,7 @@ Fraction& Fraction::operator+=(const Fraction& other) {
 }
 
 Fraction& Fraction::operator-=(const Fraction& other) {
+    totalOperations++;
     numerator = numerator * other.denominator - other.numerator * denominator;
     denominator *= other.denominator;
     normalize();
@@ -118,6 +119,7 @@ Fraction& Fraction::operator-=(const Fraction& other) {
 }
 
 Fraction& Fraction::operator*=(const Fraction& other) {
+    totalOperations++;
     numerator *= other.numerator;
     denominator *= other.denominator;
     normalize();
@@ -126,6 +128,7 @@ Fraction& Fraction::operator*=(const Fraction& other) {
 }
 
 Fraction& Fraction::operator/=(const Fraction& other) {
+    totalOperations++;
     if (other.numerator == 0) {
         cerr << "Ошибка. Деление на ноль-дробь" << endl;
         return *this;
@@ -140,22 +143,22 @@ Fraction& Fraction::operator/=(const Fraction& other) {
 // Бинарные через присваивание
 Fraction operator+(Fraction lhs, const Fraction& rhs) {
     lhs += rhs;
-    return lhs
+    return lhs;
 }
 
 Fraction operator-(Fraction lhs, const Fraction& rhs) {
     lhs -= rhs;
-    return lhs
+    return lhs;
 }
 
 Fraction operator*(Fraction lhs, const Fraction& rhs) {
     lhs *= rhs;
-    return lhs
+    return lhs;
 }
 
 Fraction operator/(Fraction lhs, const Fraction& rhs) {
     lhs /= rhs;
-    return lhs
+    return lhs;
 }
 
 // Сравнения

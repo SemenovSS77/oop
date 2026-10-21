@@ -12,7 +12,7 @@ private:
     int numerator; // Числитель
     int denominator; // Знаменатель
     mutable vector<string> history; // История операций
-    static int objectCount; // Счетчик объектов
+    static int totalOperations; // Счетчик операций
 
     void normalize();
 
@@ -28,7 +28,8 @@ public:
     // Геттеры
     int getNumerator() const;
     int getDenominator() const;
-    static int getObjectCount();
+    static int getTotalOperations();
+    static void resetTotalOperations();
 
     // Вывод
     void print() const;

@@ -1,0 +1,73 @@
+@startuml
+    class Fraction {
+        - numerator: int
+        - denominator: int
+        - {mutable} history: vector<string>
+        - {static} totalOperations: int
+        - {static} destroyedCount: int
+        --
+        + Fraction()
+        + Fraction(num: int, den: int)
+        + {explicit} Fraction(value: int)
+        + ~Fraction()
+        --
+        + getNumerator(): int
+        + getDenominator(): int
+        + {static} getTotalOperations(): int
+        + {static} resetTotalOperations(): void
+        + {static} getDestroyedCount(): int
+        --
+        + print(): void
+        + printHistory(): void
+        + addHistoryEntry(entry: string): void
+        --
+        + operator++(): Fraction&
+        + operator++(int): Fraction
+        + operator--(): Fraction&
+        + operator--(int): Fraction
+        --
+        + operator+=(other: Fraction&): Fraction&
+        + operator-=(other: Fraction&): Fraction&
+        + operator*=(other: Fraction&): Fraction&
+        + operator/=(other: Fraction&): Fraction&
+        --
+        + {static} operator+(lhs: Fraction, rhs: Fraction&): Fraction
+        + {static} operator-(lhs: Fraction, rhs: Fraction&): Fraction
+        + {static} operator*(lhs: Fraction, rhs: Fraction&): Fraction
+        + {static} operator/(lhs: Fraction, rhs: Fraction&): Fraction
+        --
+        + {static} operator<(a: Fraction&, b: Fraction&): bool
+        + {static} operator>(a: Fraction&, b: Fraction&): bool
+        + {static} operator<=(a: Fraction&, b: Fraction&): bool
+        + {static} operator>=(a: Fraction&, b: Fraction&): bool
+        + {static} operator==(a: Fraction&, b: Fraction&): bool
+        + {static} operator!=(a: Fraction&, b: Fraction&): bool
+        --
+        - normalize(): void
+    }
+    
+    note right of Fraction
+        **Класс рациональных чисел.**
+        Хранит дробь в несократимом виде.
+        ---
+        **Инварианты:**
+        1. denominator != 0
+        2. denominator > 0
+        3. gcd(|numerator|, denominator) == 1
+    end note
+
+    note bottom of Fraction
+        friend-функции (`+`, `-`, `*`, `/`, сравнения) 
+        вынесены из класса для симметричности операндов.
+    end note
+
+    legend right
+        **Обозначения:**
+        + публичный метод
+        - приватный метод/поле
+        {static} статический член
+        {mutable} можно менять в const-методах
+        {explicit} запрещает неявное преобразование
+    end legend
+
+@enduml

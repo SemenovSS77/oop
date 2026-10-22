@@ -55,7 +55,6 @@ int Fraction::getTotalOperations() {return totalOperations;}
 void Fraction::resetTotalOperations() {totalOperations = 0;}
 int Fraction::getDestroyedCount() {return destroyedCount;}
 
-
 void Fraction::print() const {
     cout << numerator << "/" << denominator;
 }
@@ -76,7 +75,7 @@ Fraction& Fraction::operator++() {
     totalOperations++;
     numerator += denominator;
     normalize();
-    history.push_back("Префиксный ++: стало " + to_string(numerator) + "/" + to_string(denominator));
+    history.push_back("++: стало " + to_string(numerator) + "/" + to_string(denominator));
     return *this;
 }
 
@@ -90,7 +89,7 @@ Fraction& Fraction::operator--() {
     totalOperations++;
     numerator -= denominator;
     normalize();
-    history.push_back("Префиксный --: стало " + to_string(numerator) + "/" + to_string(denominator));
+    history.push_back("--: стало " + to_string(numerator) + "/" + to_string(denominator));
     return *this;
 }
 

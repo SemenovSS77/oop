@@ -21,31 +21,41 @@ void Fraction::normalize() {
 
 Fraction::Fraction() :
     numerator(0),
-    denominator(1)
+    denominator(1),
+    historyCapacity(2),
+    historySize(0)
 {
-    history.push_back("Создана дробь по умолчанию: 0/1");
+    history = new string[historyCapacity];
+    addHistoryEntry("Создана дробь по умолчанию: 0/1");
 }
 
 Fraction::Fraction(int num, int den) :
     numerator(num),
-    denominator(den)
+    denominator(den),
+    historyCapacity(2),
+    historySize(0)
 {
+    history = new string[historyCapacity];
     if (den == 0) {
         cerr << "Ошибка. Знаменатель не может быть 0. Устанавливаем 1" << endl;
         denominator = 1;
     }
     normalize();
-    history.push_back("Создана дробь: " + to_string(numerator) + "/" + to_string(denominator));
+    addHistoryEntry("Создана дробь: " + to_string(numerator) + "/" + to_string(denominator));
 }
 
 Fraction::Fraction(int value) :
     numerator(value),
-    denominator(1)
+    denominator(1),
+    historyCapacity(2),
+    historySize(0)
 {
-    history.push_back("Создана дробь из целого: " + to_string(value));
+    history = new string[historyCapacity];
+    addHistoryEntry("Создана дробь из целого: " + to_string(value));
 }
 
 Fraction::~Fraction() {
+    delete[] history;
     destroyedCount++;
 }
 
@@ -61,13 +71,23 @@ void Fraction::print() const {
 
 void Fraction::printHistory() const {
     cout << "История объекта " << numerator << "/" << denominator << ":" << endl;
-    for (size_t i = 0; i < history.size(); i++) {
+    for (int i = 0; i < historySize; i++) {
         cout << " " << (i + 1) << ". " << history[i] << endl;
     }
 }
 
 void Fraction::addHistoryEntry(const string& entry) const {
-    history.push_back(entry);
+    if (historySize >= historyCapacity) {
+        historyCapacity *= 2;
+        string* newHistory = new string[historyCapacity];
+        for (int i = 0; i < historySize; i++) {
+            newHistory[i] = history[i];
+        }
+        delete[] history;
+        history = newHistory;
+    }
+    history[historySize] = entry;
+    historySize++;
 }
 
 // Унарные операторы
@@ -75,7 +95,7 @@ Fraction& Fraction::operator++() {
     totalOperations++;
     numerator += denominator;
     normalize();
-    history.push_back("++: стало " + to_string(numerator) + "/" + to_string(denominator));
+    addHistoryEntry("++: стало " + to_string(numerator) + "/" + to_string(denominator));
     return *this;
 }
 
@@ -89,7 +109,7 @@ Fraction& Fraction::operator--() {
     totalOperations++;
     numerator -= denominator;
     normalize();
-    history.push_back("--: стало " + to_string(numerator) + "/" + to_string(denominator));
+    addHistoryEntry("--: стало " + to_string(numerator) + "/" + to_string(denominator));
     return *this;
 }
 
@@ -105,7 +125,7 @@ Fraction& Fraction::operator+=(const Fraction& other) {
     numerator = numerator * other.denominator + other.numerator * denominator;
     denominator *= other.denominator;
     normalize();
-    history.push_back("+= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    addHistoryEntry("+= " + to_string(other.numerator) + "/" + to_string(other.denominator));
     return *this;
 }
 
@@ -114,7 +134,7 @@ Fraction& Fraction::operator-=(const Fraction& other) {
     numerator = numerator * other.denominator - other.numerator * denominator;
     denominator *= other.denominator;
     normalize();
-    history.push_back("-= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    addHistoryEntry("-= " + to_string(other.numerator) + "/" + to_string(other.denominator));
     return *this;
 }
 
@@ -123,7 +143,7 @@ Fraction& Fraction::operator*=(const Fraction& other) {
     numerator *= other.numerator;
     denominator *= other.denominator;
     normalize();
-    history.push_back("*= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    addHistoryEntry("*= " + to_string(other.numerator) + "/" + to_string(other.denominator));
     return *this;
 }
 
@@ -136,7 +156,7 @@ Fraction& Fraction::operator/=(const Fraction& other) {
     numerator *= other.denominator;
     denominator *= other.numerator;
     normalize();
-    history.push_back("/= " + to_string(other.numerator) + "/" + to_string(other.denominator));
+    addHistoryEntry("/= " + to_string(other.numerator) + "/" + to_string(other.denominator));
     return *this;
 }
 

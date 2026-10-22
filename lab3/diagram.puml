@@ -1,8 +1,10 @@
-@startuml
+@startuml FractionDiagram
     class Fraction {
         - numerator: int
         - denominator: int
-        - {mutable} history: vector<string>
+        - {mutable} history: string*
+        - {mutable} historySize: int
+        - {mutable} historyCapacity: int
         - {static} totalOperations: int
         - {static} destroyedCount: int
         --
@@ -54,6 +56,9 @@
         1. denominator != 0
         2. denominator > 0
         3. gcd(|numerator|, denominator) == 1
+        ---
+        **История** реализована 
+        через динамический массив (`string*`).
     end note
 
     note bottom of Fraction

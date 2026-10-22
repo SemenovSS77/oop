@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -25,7 +24,9 @@ class Fraction {
 private:
     int numerator;                        ///< Числитель
     int denominator;                      ///< Знаменатель
-    mutable vector<string> history;       ///< История операций
+    mutable string* history;              ///< История операций (динамический массив)
+    mutable int historySize;              ///< Текущий размер истории
+    mutable int historyCapacity;          ///< Вместимость массива
     static int totalOperations;           ///< Общий счётчик выполненных операций
     static int destroyedCount;            ///< Общий счётчик уничтоженных объектов
 
@@ -65,7 +66,7 @@ public:
     // ----- Деструктор -----
 
     /**
-     * @brief Деструктор (увеличивает счётчик уничтоженных объектов)
+     * @brief Деструктор (очищает память и увеличивает счётчик уничтоженных объектов)
      */
     ~Fraction();
 
@@ -98,7 +99,7 @@ public:
      * @brief Добавить запись в историю операций.
      * @param entry Текст записи.
      *
-     * @note Метод объявлен `const`, но меняет `mutable`-поле `history`.
+     * @note Метод объявлен `const`, но меняет `mutable`-поля.
      */
     void addHistoryEntry(const string& entry) const;
 

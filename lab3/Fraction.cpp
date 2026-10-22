@@ -11,13 +11,14 @@ void Fraction::normalize() {
         numerator = -numerator;
         denominator = -denominator;
     }
-
     int g = gcd(abs(numerator), denominator);
     if (g > 1) {
         numerator /= g;
         denominator /= g;
     }
 }
+
+// ----- Конструкторы -----
 
 Fraction::Fraction() :
     numerator(0),
@@ -54,17 +55,51 @@ Fraction::Fraction(int value) :
     addHistoryEntry("Создана дробь из целого: " + to_string(value));
 }
 
+// Конструктор копирования
+Fraction::Fraction(const Fraction& other) :
+    numerator(other.numerator),
+    denominator(other.denominator),
+    historyCapacity(other.historyCapacity),
+    historySize(other.historySize)
+{
+    history = new string[historyCapacity];
+    for (int i = 0; i < historySize; i++) {
+        history[i] = other.history[i];
+    }
+}
+
+// Оператор присваивания (глубокая копия)
+Fraction& Fraction::operator=(const Fraction& other) {
+    if (this != &other) {
+        delete[] history; // Удаляем старую память
+        
+        numerator = other.numerator;
+        denominator = other.denominator;
+        historyCapacity = other.historyCapacity;
+        historySize = other.historySize;
+        
+        history = new string[historyCapacity];
+        for (int i = 0; i < historySize; i++) {
+            history[i] = other.history[i];
+        }
+    }
+    return *this;
+}
+
+// ----- Деструктор -----
 Fraction::~Fraction() {
     delete[] history;
     destroyedCount++;
 }
 
+// ----- Геттеры -----
 int Fraction::getNumerator() const {return numerator;}
 int Fraction::getDenominator() const {return denominator;}
 int Fraction::getTotalOperations() {return totalOperations;}
 void Fraction::resetTotalOperations() {totalOperations = 0;}
 int Fraction::getDestroyedCount() {return destroyedCount;}
 
+// ----- Вывод -----
 void Fraction::print() const {
     cout << numerator << "/" << denominator;
 }
@@ -90,7 +125,8 @@ void Fraction::addHistoryEntry(const string& entry) const {
     historySize++;
 }
 
-// Унарные операторы
+// ----- Унарные операторы -----
+
 Fraction& Fraction::operator++() {
     totalOperations++;
     numerator += denominator;
@@ -100,7 +136,7 @@ Fraction& Fraction::operator++() {
 }
 
 Fraction Fraction::operator++(int) {
-    Fraction temp = *this;
+    Fraction temp = *this; // Теперь работает безопасно благодаря конструктору копирования
     ++(*this);
     return temp;
 }
@@ -119,7 +155,8 @@ Fraction Fraction::operator--(int) {
     return temp;
 }
 
-// Арифметическое присваивание
+// ----- Арифметическое присваивание -----
+
 Fraction& Fraction::operator+=(const Fraction& other) {
     totalOperations++;
     numerator = numerator * other.denominator + other.numerator * denominator;
@@ -160,7 +197,8 @@ Fraction& Fraction::operator/=(const Fraction& other) {
     return *this;
 }
 
-// Бинарные через присваивание
+// ----- Бинарные арифметические -----
+
 Fraction operator+(Fraction lhs, const Fraction& rhs) {
     lhs += rhs;
     return lhs;
@@ -181,7 +219,8 @@ Fraction operator/(Fraction lhs, const Fraction& rhs) {
     return lhs;
 }
 
-// Сравнения
+// ----- Сравнения -----
+
 bool operator<(const Fraction& a, const Fraction& b) {
     return a.numerator * b.denominator < b.numerator * a.denominator;
 }

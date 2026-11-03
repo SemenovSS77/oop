@@ -30,6 +30,10 @@ Minivan& Minivan::operator=(const Minivan& other) {
 }
 
 Minivan::~Minivan() {
+    delete[] extraFeature;
+}
+
+void Minivan::move() const {
     cout << "Минивэн плавно едет по шоссе" << endl;
 }
 

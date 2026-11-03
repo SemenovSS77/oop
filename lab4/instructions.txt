@@ -15,6 +15,6 @@ g++ -shared -fPIC -Iinclude src/Vehicle.cpp src/LandVehicle.cpp src/Car.cpp src/
 g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_static
 g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_dynamic
 
-# 5. Запуск (Linux)
+# 5. Запуск
 .\build\test_static.exe
 .\build\test_dynamic.exe

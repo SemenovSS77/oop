@@ -1,0 +1,20 @@
+# 1. Объектные файлы
+g++ -Iinclude -c src/Vehicle.cpp -o build/Vehicle.o
+g++ -Iinclude -c src/LandVehicle.cpp -o build/LandVehicle.o
+g++ -Iinclude -c src/Car.cpp -o build/Car.o
+g++ -Iinclude -c src/Truck.cpp -o build/Truck.o
+g++ -Iinclude -c src/Minivan.cpp -o build/Minivan.o
+
+# 2. Статическая библиотека
+ar rcs build/liblab4.a build/Vehicle.o build/LandVehicle.o build/Car.o build/Truck.o build/Minivan.o
+
+# 3. Динамическая библиотека
+g++ -shared -fPIC -Iinclude src/Vehicle.cpp src/LandVehicle.cpp src/Car.cpp src/Truck.cpp src/Minivan.cpp -o build/liblab4.so
+
+# 4. Линковка тестов
+g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_static
+g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_dynamic
+
+# 5. Запуск (Linux)
+.\build\test_static.exe
+.\build\test_dynamic.exe

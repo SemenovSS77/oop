@@ -1,0 +1,9 @@
+Car Toyota 4 1.5 180 5
+Car BMW 4 1.6 240 5
+Car Lada 4 1.1 160 4
+Truck Volvo 6 10.0 120 20.5
+Truck MAN 8 12.0 110 25.0
+Truck Scania 6 9.5 115 18.0
+Minivan Chrysler 4 2.0 200 7 1.2 Comfort
+Minivan Honda 4 1.9 190 8 1.5 Family
+Minivan VW 4 1.8 195 7 1.0 Business

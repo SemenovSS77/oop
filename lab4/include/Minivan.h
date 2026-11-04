@@ -2,11 +2,10 @@
 #define MINIVAN_H
 
 #include "Car.h"
-#include "ICargoCarrier.h"
+#include "Truck.h"
 
-class Minivan : public Car, public ICargoCarrier {
+class Minivan : public Car, public Truck {
 private:
-    double smallCargoCapacity;
     char* extraFeature;
 
 public:
@@ -15,9 +14,10 @@ public:
     Minivan& operator=(const Minivan& other);
     virtual ~Minivan();
 
+    void startEngine() const override; 
+    
     void move() const override;
     string getType() const override;
-    double getCargoCapacity() const override;
 
     void printInfo() const override;
 };

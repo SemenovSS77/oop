@@ -5,14 +5,16 @@ Minivan::Minivan(string b, int w, double m, int seats, double cargo, double spee
     :   Vehicle(b),
         LandVehicle(b, w, m),
         Car(b, w, m, seats, speed),
-        smallCargoCapacity(cargo) {
+        Truck(b, w, m, cargo, speed) {
             extraFeature = new char[strlen(feature) + 1];
             strcpy(extraFeature, feature);
 }
 
 Minivan::Minivan(const Minivan& other)
-    :   Vehicle(other), LandVehicle(other), Car(other), ICargoCarrier(other),
-        smallCargoCapacity(other.smallCargoCapacity) {
+    :   Vehicle(other), 
+        LandVehicle(other), 
+        Car(other), 
+        Truck(other) {
             extraFeature = new char[strlen(other.extraFeature) + 1];
             strcpy(extraFeature, other.extraFeature);
 }
@@ -20,8 +22,8 @@ Minivan::Minivan(const Minivan& other)
 Minivan& Minivan::operator=(const Minivan& other) {
     if (this != &other) {
         Car::operator=(other);
-        smallCargoCapacity = other.smallCargoCapacity;
-
+        Truck::operator=(other);
+        
         delete[] extraFeature;
         extraFeature = new char[strlen(other.extraFeature) + 1];
         strcpy(extraFeature, other.extraFeature);
@@ -33,15 +35,18 @@ Minivan::~Minivan() {
     delete[] extraFeature;
 }
 
+void Minivan::startEngine() const {
+    cout << "Двигатель минивэна заведён" << endl;
+}
+
 void Minivan::move() const {
     cout << "Минивэн плавно едет по шоссе" << endl;
 }
 
 string Minivan::getType() const {return "Minivan";}
-double Minivan::getCargoCapacity() const {return smallCargoCapacity;}
 
 void Minivan::printInfo() const {
     Car::printInfo();
-    cout << "Багажник: " << smallCargoCapacity << " т." << endl;
+    cout << "Грузоподъёмность (багажник): " << getCargoCapacity() << " т." << endl;
     cout << "Особенность: " << extraFeature << endl;
 }

@@ -48,6 +48,7 @@ int main() {
         cout << "-------------------" << endl;
     }
 
+    cout << endl;
     cout << "--- 2. Статика и френд ---" << endl;
     cout << "Макс. скорость: " << Vehicle::getMaxRegisteredSpeed() << " км/ч" << endl;
     showVehicleBrand(*vehicles[0]);

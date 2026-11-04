@@ -1,0 +1,113 @@
+@startuml bebe
+
+    interface IPassengerCarrier {
+        + {abstract} getPassengerCapacity(): int
+    }
+
+    interface ICargoCarrier {
+        + {abstract} getCargoCapacity(): double
+    }
+
+    abstract class Vehicle {
+        # brand: string
+        - {static} maxRegisteredSpeed: double
+        --
+        + Vehicle(b: string)
+        + {abstract} startEngine(): void
+        + {abstract} move(): void
+        + {abstract} getType(): string
+        + printInfo(): void
+        --
+        + {static} getMaxRegisteredSpeed(): double
+        + {static} resetMaxSpeed(): void
+        + {static} updateMaxSpeed(speed: double): void
+        --
+        + {static} showVehicleBrand(v: Vehicle&): void
+    }
+    
+    class LandVehicle {
+        # wheels: int
+        # mass: double
+        --
+        + LandVehicle(b: string, w: int, m: double)
+        + LandVehicle(other: LandVehicle&)
+        + operator=(other: LandVehicle&): LandVehicle&
+        + printInfo(): void
+    }
+
+    class Car {
+        # passengerSeats: int
+        --
+        + Car(b: string, w: int, m: double, seats: int, speed: double)
+        + startEngine(): void
+        + move(): void
+        + getType(): string
+        + getPassengerCapacity(): int
+        + printInfo(): void
+    }
+
+    class Truck {
+        # cargoCapacity: double
+        --
+        + Truck(b: string, w: int, m: double, cargo: double, speed: double)
+        + startEngine(): void
+        + move(): void
+        + getType(): string
+        + getCargoCapacity(): double
+        + printInfo(): void
+    }
+
+    class Minivan {
+        - extraFeature: char*
+        --
+        + Minivan(...)
+        + Minivan(other: Minivan&)
+        + operator=(other: Minivan&): Minivan&
+        + ~Minivan()
+        + startEngine(): void
+        + move(): void
+        + getType(): string
+        + printInfo(): void
+    }
+
+    Car .up.|> IPassengerCarrier
+    Truck .up.|> ICargoCarrier
+
+    LandVehicle -up-|> Vehicle
+    Car -up-|> LandVehicle
+    Truck -up-|> LandVehicle
+    Minivan -up-|> Car
+    Minivan -up-|> Truck
+
+    note top of LandVehicle
+        **virtual public Vehicle**
+        (Решает проблему ромба)
+    end note
+    
+    note top of Car
+        **virtual public LandVehicle**
+    end note
+
+    note top of Truck
+        **virtual public LandVehicle**
+    end note
+
+    note bottom of Minivan
+        **Класс-наследник ромба.**
+        Наследует Car и Truck.
+        Явно переопределяет `startEngine()`, 
+        чтобы избежать неоднозначности.
+        Имеет глубокое копирование для `extraFeature`.
+    end note
+
+    legend right
+        **Обозначения:**
+        -up-|> наследование классов
+        .up.|> реализация интерфейса
+        {abstract} чисто виртуальный метод
+        {static} статический член/метод
+        # protected поле
+        - private поле
+    end legend
+
+@enduml

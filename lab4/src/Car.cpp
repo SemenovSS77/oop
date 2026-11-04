@@ -4,7 +4,7 @@ Car::Car(string b, int w, double m, int seats, double speed) : Vehicle(b), LandV
     updateMaxSpeed(speed);
 }
 
-Car::Car(const Car& other) : Vehicle(other), LandVehicle(other), IPassengerCarrier(other), passengerSeats(other.passengerSeats) {}
+Car::Car(const Car& other) : Vehicle(other), LandVehicle(other), passengerSeats(other.passengerSeats) {}
 
 Car& Car::operator=(const Car& other) {
     if (this != &other) {

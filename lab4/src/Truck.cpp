@@ -4,7 +4,7 @@ Truck::Truck(string b, int w, double m, double cargo, double speed) : Vehicle(b)
     updateMaxSpeed(speed);
 }
 
-Truck::Truck(const Truck& other) : Vehicle(other), LandVehicle(other), ICargoCarrier(other), cargoCapacity(other.cargoCapacity) {}
+Truck::Truck(const Truck& other) : Vehicle(other), LandVehicle(other), cargoCapacity(other.cargoCapacity) {}
 
 Truck& Truck::operator=(const Truck& other) {
     if (this != &other) {

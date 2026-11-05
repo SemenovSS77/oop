@@ -1,4 +1,5 @@
 Car Toyota 4 1.5 180 5
+Car Mercedes 4 1.6 200 5
 Car BMW 4 1.6 240 5
 Car Lada 4 1.1 160 4
 Truck Volvo 6 10.0 120 20.5

@@ -1,26 +1,29 @@
-# 1. Объектные файлы
-g++ -Iinclude -c src/Vehicle.cpp -o build/Vehicle.o
-g++ -Iinclude -c src/LandVehicle.cpp -o build/LandVehicle.o
-g++ -Iinclude -c src/Car.cpp -o build/Car.o
-g++ -Iinclude -c src/Truck.cpp -o build/Truck.o
-g++ -Iinclude -c src/Minivan.cpp -o build/Minivan.o
+mkdir -p build/obj build/pic
 
-# 2. Статическая библиотека
-ar rcs build/liblab4.a build/Vehicle.o build/LandVehicle.o build/Car.o build/Truck.o build/Minivan.o
+# Объектные файлы для .a (без -fPIC)
+g++ -std=c++17 -Iinclude -c src/Vehicle.cpp -o build/obj/Vehicle.o
+g++ -std=c++17 -Iinclude -c src/LandVehicle.cpp -o build/obj/LandVehicle.o
+g++ -std=c++17 -Iinclude -c src/Car.cpp -o build/obj/Car.o
+g++ -std=c++17 -Iinclude -c src/Truck.cpp -o build/obj/Truck.o
+g++ -std=c++17 -Iinclude -c src/Minivan.cpp -o build/obj/Minivan.o
 
-# 3. Динамическая библиотека
-g++ -shared -fPIC -Iinclude src/Vehicle.cpp src/LandVehicle.cpp src/Car.cpp src/Truck.cpp src/Minivan.cpp -o build/liblab4.so
+# Статическая библиотека
+ar rcs build/liblab4.a build/obj/Vehicle.o build/obj/LandVehicle.o build/obj/Car.o build/obj/Truck.o build/obj/Minivan.o
 
-# 4. Линковка тестов
-g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_static
-g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_dynamic
+# Объектные файлы для .so (с -fPIC)
+g++ -std=c++17 -Iinclude -fPIC -c src/Vehicle.cpp -o build/pic/Vehicle.o
+g++ -std=c++17 -Iinclude -fPIC -c src/LandVehicle.cpp -o build/pic/LandVehicle.o
+g++ -std=c++17 -Iinclude -fPIC -c src/Car.cpp -o build/pic/Car.o
+g++ -std=c++17 -Iinclude -fPIC -c src/Truck.cpp -o build/pic/Truck.o
+g++ -std=c++17 -Iinclude -fPIC -c src/Minivan.cpp -o build/pic/Minivan.o
 
-# 5. Запуск
-.\build\test_static.exe
-.\build\test_dynamic.exe
+# Динамическая библиотека
+g++ -shared -o build/liblab4.so build/pic/Vehicle.o build/pic/LandVehicle.o build/pic/Car.o build/pic/Truck.o build/pic/Minivan.o
 
+# Линковка тестов
+g++ -std=c++17 -Iinclude main.cpp build/liblab4.a -o build/test_static
+g++ -std=c++17 -Iinclude main.cpp -Lbuild -llab4 -Wl,-rpath,'$ORIGIN' -o build/test_dynamic
 
-че такое чистая виртуальная функция
-абстрактный класс
-полиморфизм
-где находятся полиморфизм
+# Запуск
+./build/test_static
+./build/test_dynamic

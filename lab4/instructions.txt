@@ -18,3 +18,9 @@ g++ -Iinclude main.cpp -Lbuild -llab4 -o build/test_dynamic
 # 5. Запуск
 .\build\test_static.exe
 .\build\test_dynamic.exe
+
+
+че такое чистая виртуальная функция
+абстрактный класс
+полиморфизм
+где находятся полиморфизм

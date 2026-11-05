@@ -16,10 +16,10 @@ Truck& Truck::operator=(const Truck& other) {
 
 Truck::~Truck() {}
 
-void Truck::startEngine() const {cout << "Двигатель грузовика заведён" << endl;}
-void Truck::move() const {cout << "Грузовик едет с грузом" << endl;}
-string Truck::getType() const {return "Truck";}
-double Truck::getCargoCapacity() const {return cargoCapacity;}
+void Truck::startEngine() const { cout << "Двигатель грузовика заведён" << endl; }
+void Truck::move() const { cout << "Грузовик едет с грузом" << endl; }
+string Truck::getType() const { return "Truck"; }
+double Truck::getCargoCapacity() const { return cargoCapacity; }
 
 void Truck::printInfo() const {
     LandVehicle::printInfo();

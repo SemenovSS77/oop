@@ -16,10 +16,10 @@ Car& Car::operator=(const Car& other) {
 
 Car::~Car() {}
 
-void Car::startEngine() const {cout << "Двигатель легкового авто заведён" << endl;}
-void Car::move() const {cout << "Легковое авто едет по дороге" << endl;}
-string Car::getType() const {return "Car";}
-int Car::getPassengerCapacity() const {return passengerSeats;}
+void Car::startEngine() const { cout << "Двигатель легкового авто заведён" << endl; }
+void Car::move() const { cout << "Легковое авто едет по дороге" << endl; }
+string Car::getType() const { return "Car"; }
+int Car::getPassengerCapacity() const { return passengerSeats; }
 
 void Car::printInfo() const {
     LandVehicle::printInfo();

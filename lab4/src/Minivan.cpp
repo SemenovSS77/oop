@@ -2,12 +2,13 @@
 #include <cstring>
 
 Minivan::Minivan(string b, int w, double m, int seats, double cargo, double speed, const char* feature)
-    :   Vehicle(b),
-        LandVehicle(b, w, m),
+    :   Vehicle(b),              // Инициализация виртуальной базы
+        LandVehicle(b, w, m),    // Инициализация виртуальной базы
         Car(b, w, m, seats, speed),
         Truck(b, w, m, cargo, speed) {
             extraFeature = new char[strlen(feature) + 1];
             strcpy(extraFeature, feature);
+            updateMaxSpeed(speed);
 }
 
 Minivan::Minivan(const Minivan& other)
@@ -43,7 +44,7 @@ void Minivan::move() const {
     cout << "Минивэн плавно едет по шоссе" << endl;
 }
 
-string Minivan::getType() const {return "Minivan";}
+string Minivan::getType() const { return "Minivan"; }
 
 void Minivan::printInfo() const {
     Car::printInfo();
